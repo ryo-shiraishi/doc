@@ -61,8 +61,12 @@ JavaScriptの最新バージョンであるES6の機能も使用しています�
 プロジェクトフォルダ内で ``` npm start ``` を実行すれば、ブラウザの ``` http://localhost:3000 ``` で空の◯×ゲームが確認できるはずです。
 こちらの指示に従ってあなたのエディタ内のシンタックスハイライトを確認することをオススメします(http://babeljs.io/docs/editors)
 
+
+
 ### 詰まってしまったら...
 つまづいたら、サポートコミュニティに行ってみましょう。(https://reactjs.org/community/support.html) 特に、Reactiflux chat(https://reactjs.org/community/support.html#reactiflux-chat)は早めに助けを求められるのでめっちゃ良いです。どこに行っても問題が解決しない場合は問題を報告してください。
+
+
 
 ## 概要
 ### Reactとは何ぞや？
@@ -89,9 +93,9 @@ class ShoppingList extends React.Component {
 
 一瞬おかしなXMLタグのようなものに見えるでしょう。コンポーネントはあなたが何をレンダリングしたいかを伝えます。(この時、Reactは効率的に更新し、データの変更があったコンポーネントだけをレンダリングします)
 
-ここでいう、ShoppingListは ** React component class ** または、 ** React component type ** です。コンポーネントは、** props ** と呼ばれるパラメータをとり、 ** render method ** を介してビューの階層をreturnします。
+ここでいう、ShoppingListは **React component class** または、 **React component type** です。コンポーネントは、**props** と呼ばれるパラメータをとり、 **render method** を介してビューの階層をreturnします。
 
-renderメソッドは、レンダリングしたいものの記述をreturnします。そして、Reactはその記述を取り込み、それを画面にレンダリングします。 特に、render ** はReact element ** を返します。これはレンダリング対象の軽量な記述です。 ほとんどのReact開発者は、JSXという特殊な構文を使用して、これらの構造を簡単に書くことができます。 ``` <div /> ``` 構文は、ビルド時に ``` React.createElement（'div'） ``` に変換されます。 上記の例は、次のものと同等です。
+renderメソッドは、レンダリングしたいものの記述をreturnします。そして、Reactはその記述を取り込み、それを画面にレンダリングします。 特に、render は**React element** を返します。これはレンダリング対象の軽量な記述です。 ほとんどのReact開発者は、JSXという特殊な構文を使用して、これらの構造を簡単に書くことができます。 ``` <div /> ``` 構文は、ビルド時に ``` React.createElement（'div'） ``` に変換されます。 上記の例は、次のものと同等です。
 ```
 return React.createElement('div', {className: 'shopping-list'},
   React.createElement('h1', /* ... h1 children ... */),
@@ -103,13 +107,16 @@ return React.createElement('div', {className: 'shopping-list'},
 JSXの中括弧の中に任意のJavaScript式を入れることができます。 各React要素は、変数に格納するか、プログラムを渡すことができる実際のJavaScriptオブジェクトです。
 ShoppingListコンポーネントは組み込みのDOMコンポーネントのみをレンダリングしますが、``` <ShoppingList /> ``` を記述することで、カスタムReactコンポーネントを簡単に簡単に作成できます。 各コンポーネントはカプセル化されているため、独立して動作することができ、単純なコンポーネントから複雑なUIを構築できます。
 
+
+
 ### はじめよう
-次の例を見てみましょう
-(https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
+[次の例を見てみましょう](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
 
 今構築しているプロジェクトの雛形が入っています。JavaScriptを気にかけてほしいので、スタイルを提供しています。
 今、わたしたちは3つのコンポーネントを持っています(四角・ボード・ゲーム)
 Squareコンポーネントは単一の<button>をレンダリングし、Boardは9つの四角形をレンダリングし、Gameコンポーネントは後で記入するプレースホルダをボードにレンダリングします。 現時点では、どのコンポーネントもインタラクティブではありません。
+
+
 
 ### Propsを通じてデータを渡す
 新しいことを始めるために、BoardコンポーネントからSquareコンポーネントにいくつかのデータを渡してみましょう。
@@ -134,7 +141,9 @@ class Square extends React.Component {
 }
 ```
 
-現在のコード(https://codepen.io/gaearon/pen/aWWQOG?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)
+
+
 
 ### インタラクティブなComponent
 Squareコンポーネントをクリックすると "X"を記入するようにしましょう。
@@ -181,7 +190,7 @@ class Square extends React.Component {
 JavaScriptのクラスにおいて、サブクラスのコンストラクタを定義する時、明示的に ``` super(); ``` 関数を呼ぶ必要があります。
 
 Squareレンダリングメソッドを変更して、現在の状態からの値を表示し、クリック時にそれを切り替える：
-- <button>タグの中の ``` this.props.value ``` を ``` this.state.value ``` に置き換えます。
+- ```<button>```タグの中の ``` this.props.value ``` を ``` this.state.value ``` に置き換えます。
 - ``` () => alert() ``` イベントハンドラを ``` () => this.setState({value: 'X'}) ``` に置き換えます。
 
 今、 ``` <button> ```タグの中身はこのような感じです。
@@ -209,7 +218,7 @@ class Square extends React.Component {
 コンポーネントが再び降りると、this.state.valueは 'X'になるので、グリッドにXが表示されます。
 任意の四角形をクリックすると、その中にXが表示されます。
 
-現在のコード(https://codepen.io/gaearon/pen/VbbVLg?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)
 
 ### Developer Tools
 ChromeとFirefoxの拡張機能の"React Devtools"では、ブラウザ内でReactコンポーネントツリーの検証が可能です。
@@ -227,7 +236,7 @@ ChromeとFirefoxの拡張機能の"React Devtools"では、ブラウザ内でRea
 あなたはBoardは各Squareの現在の状態を調べるべきだと考えるかもしれません。これはReactでは技術的に可能ですが、コードを理解しにくく、脆く、リファクタリングするのが難しくなるため、おすすめしません。
 かわりに、ここでのベストは各Squareの代わりにBoardコンポーネントにこの状態を格納することです。Boardコンポーネントは各Squareにどのように表示するかを伝えることができます。
 
-** 複数の子からのデータを集約する場合や、2つの子コンポーネントが相互に通信する場合は、親コンポーネントに存在するようにstateを上に移動します。 親は、親コンポーネントを介して子にstateを戻すことができるので、子コンポーネントは常に互いに、親と同期します。 **
+**複数の子からのデータを集約する場合や、2つの子コンポーネントが相互に通信する場合は、親コンポーネントに存在するようにstateを上に移動します。 親は、親コンポーネントを介して子にstateを戻すことができるので、子コンポーネントは常に互いに、親と同期します。**
 
 Reactコンポーネントをリファクタリングするときには、このようにstateを上に引き寄せているので、この機会に試してみましょう。 Boardにコンストラクタを追加し、9つのSquareに対応する9つのnullを持つ配列を含むように初期状態を設定します。
 ```
@@ -293,7 +302,7 @@ renderSquare(i) {
 }
 ```
 
-現在のコード(https://codepen.io/gaearon/pen/gWWQPY?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)
 
 ここで、四角がクリックされた時の動作を変更する必要があります。Boardコンポーネントには、どの四角が塗りつぶされているかが保存されます。つまり、SquareがBoardの状態を更新するための方法が必要です。コンポーネントの状態は、privateとみなされるため、Boardの状態をSquareから直接更新することはできません。
 ここでよくあるパターンは、四角をクリックすると呼び出される関数をBoardからSquareに渡します。BoardのrenderSquareを再度変更し、次のようにします。
@@ -329,13 +338,13 @@ class Square extends React.Component {
 ```
 
 今、四角がクリックされると、Boardによって渡されたonClick関数が呼び出されます。ここで何が起きるかを要約すると、
-1. 組み込みのDOM<button>コンポーネントのonClick propは、Reactにクリックイベントリスナーの設定を指示します。
+1. 組み込みのDOM```<button>```コンポーネントのonClick propは、Reactにクリックイベントリスナーの設定を指示します。
 2. ボタンがクリックされると、ReactはSquareのrender()メソッドで定義されたonClickイベントハンドラを呼び出します。
 3. このイベントハンドラはthis.props.onClick()を呼び出します。Squareのpropは、Boardによって指定されています。
 4. BoardはSquareに ``` onClick={() => this.handleClick(i)} ``` を渡しているので、呼び出されるとBoard上でthis.handleClick(i)が実行されます。
 5. まだBoard上でhandleClick()メソッドを定義していないので、コードがクラッシュします。
 
-DOM<button>要素のonClick属性は、Reactにとって特別な意味を持っていますが、SquareのonClick propまたはBoardのhandleClickメソッドには異なる名前をつけることができます。しかし、Reactアプリケーションでは、属性には ``` on* ```を、ハンドラメソッドには ``` handle* ``` を命名するのが一般的です。
+DOM```<button>``` 要素のonClick属性は、Reactにとって特別な意味を持っていますが、SquareのonClick propまたはBoardのhandleClickメソッドには異なる名前をつけることができます。しかし、Reactアプリケーションでは、属性には ``` on* ```を、ハンドラメソッドには ``` handle* ``` を命名するのが一般的です。
 
 四角をクリックしてみてください。handleClickをまだ定義していないので、エラーが発生します。これをBoardクラスに追加します。
 ```
@@ -389,7 +398,7 @@ class Board extends React.Component {
 }
 ```
 
-現在のコード(https://codepen.io/gaearon/pen/ybbQJX?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)
 
 ``` .slice() ``` を呼び出して、既存の配列を変更する代わりに、四角の配列をコピーします。不変性がなぜ重要であるかを学ぶために、次のセクションに進んでください。
 
@@ -452,7 +461,9 @@ function Square(props) {
 わたしたちはコードを整理していますが、``` onClick={() => props.onClick()} ``` を ``` onClick={props.onClick} ``` に変更しました。
 ``` onClick={props.onClick()} ``` は、渡す代わりにすぐに ``` props.onClick ``` を呼び出すため、機能しません。
 
-現在のコード(https://codepen.io/gaearon/pen/QvvJOv?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/QvvJOv?editors=0010)
+
+
 
 ### ターンを作る
 明らかに不足しているのは、Xだけがプレイできることです。それを修正しましょう。
@@ -547,7 +558,9 @@ class Board extends React.Component {
 }
 ```
 
-現在のコード(https://codepen.io/gaearon/pen/KmmrBy?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/KmmrBy?editors=0010)
+
+
 
 ### 勝者の定義
 ゲームに勝利した時を見てみましょう。このヘルパー関数をファイルの最後に追加します。
@@ -607,7 +620,9 @@ handleClick(i) {
 
 おめでとう！あなたは今◯×ゲームを動かしています。そして、あなたはReactの基礎を知っています。あなたは恐らくここでは本当の勝者というわけです。
 
-現在のコード(https://codepen.io/gaearon/pen/LyyXgK?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/LyyXgK?editors=0010)
+
+
 
 ## 履歴の保存
 Boardの古い状態に戻って、以前の動きの後にどのように見えるかを見ることができるようにしましょう。移動が行われるたびに、すでに新しい四角の配列が作成されています。これは過去のボードの状態を同時に簡単に保存できることを意味します。
@@ -806,7 +821,9 @@ handleClick(i) {
 
 この時点で、BoardはrenderSquareとrenderだけを必要としています。状態の初期化とクリックハンドラは両方ともゲームに存在する必要があります。
 
-現在のコード(https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)
+
+
 
 ### 移動を見る
 これまでのゲームで行われた以前の動きを見てみましょう。先ほどわたしたちは、React要素はファーストクラスのJavaScriptオブジェクトであり、保存したり、渡したりできることを学びました。Reactで複数の項目をレンダリングするには、React要素の配列を渡します。その配列を構築する最も一般的な方法は、データの配列をマップすることです。Gameのrenderメソッドでそれをやってみましょう。
@@ -852,13 +869,15 @@ render() {
   }
 ```
 
-現在のコード(https://codepen.io/gaearon/pen/EmmGEa?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/EmmGEa?editors=0010)
 
 履歴の各ステップについて、すぐに実装するクリックハンドラを持つ ``` <button> ``` を含むリストアイテム ``` <li> ``` を作成します。このコードを使用すると、ゲーム内で行われた移動の一覧と、次の警告が表示されます。
 
 > Warning: Each child in an array or iterator should have a unique “key” prop. Check the render method of “Game”.
 
 この警告が何を意味するのかを話しましょう。
+
+
 
 ### Keys
 アイテムをレンダリングすると、Reactは常に各アイテムの情報をリストに保存します。状態を持つコンポーネントをレンダリングする場合は、その状態を保存する必要があります。コンポーネントの実装方法に関係なく、Reactはバッキングネイティブビューへの参照を保存します。
@@ -888,12 +907,14 @@ keyはReactによって予約された特別なプロパティです。(refと�
 
 リストが再レンダリングされると、Reactは新しいバージョンの各要素を受け取り、前のリストで一致するkeyを持つ要素を探します。keyがセットに追加されると、コンポーネントが作成されます。keyが削除されると、コンポーネントが破棄されます。keyはReactに各コンポーネントのアイデンティティを伝えるので、rerenders間で状態を維持することができます。コンポーネントのkeyを変更すると、コンポーネントは完全に破棄され、新しい状態で再作成されます。
 
-** 動的なリストを作成するたびに、適切なkeyを割り当てることを強くおすすめします。 ***
+**動的なリストを作成するたびに、適切なkeyを割り当てることを強くおすすめします。**
 適切なkeyを手元においていない場合は、データの再構成を検討してください。
 
 keyを指定していない場合、Reactはあなたに警告し、配列のインデックスをkeyとして使用します。リスト内の要素の順序を変更したり、アイテムの追加/削除を行う場合には正しい選択ではありません。明示的に ``` key={i} ``` を渡すと警告が消えますが、同じ問題がありますので、ほとんどの場合は推奨されていません。
 
 コンポーネントのkeyは、グローバルに一意である必要はなく、直接の兄弟に対して一意である必要があります。
+
+
 
 ### 時間移動の実装
 移動リストについては、各ステップごとに固有のID(移動が発生した回数)が既にあります。Gameのrenderメソッドでkeyを　``` <li key={move}> ``` として追加し、keyの警告が消えるはずです。
@@ -910,7 +931,7 @@ const moves = history.map((step, move) => {
 });
 ```
 
-現在のコード(https://codepen.io/gaearon/pen/PmmXRE?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/PmmXRE?editors=0010)
 
 ``` jumpTo ``` が未定義であるため、移動ボタンのいずれかをクリックするとエラーが発生します。Gameの状態に新しいkeyを追加して、現在表示しているステップを示しましょう。
 まず、 ``` stepNumber: 0 ``` をGameのコンストラクタの初期状態に追加します。
@@ -977,9 +998,11 @@ render() {
   // the rest has not changed
 ```
 
-現在のコード(https://codepen.io/gaearon/pen/gWWZgR?editors=0010)
+[現在のコード](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)
 
 さっそく移動ボタンをクリックすると、ボードはすぐに更新され、その時のゲームの様子が表示されます。
+
+
 
 ### Wrapping Up
 さて、あなたは◯×ゲームを作ることができました。
@@ -987,9 +1010,9 @@ render() {
 - 1人のプレイヤーが勝利した時はそれを示し
 - ゲーム中の移動の履歴を記憶し、
 - プレイヤーは古いバージョンのゲームボードを見に時間を遡りジャンプすることができます。
-よくできました！Reactの仕組みがよく理解できれば幸いです。
+  よくできました！Reactの仕組みがよく理解できれば幸いです。
 
-最終的な結果はこちら(https://codepen.io/gaearon/pen/gWWZgR?editors=0010)
+[最終的な結果はこちら](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)
 
 時間がもっとあったり、新しいスキルを練習したければ、次のような改善のアイデアを難易度の高い順に並べておきます。
 1. 移動履歴リストに各移動の位置を「col, row」の形式で表示します
