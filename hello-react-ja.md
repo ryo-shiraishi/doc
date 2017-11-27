@@ -37,21 +37,21 @@ JavaScriptの最新バージョンであるES6の機能も使用しています�
 
 この方法では、手間ですがあなたの快適な環境で開発することができます。次の方法を試してください。
 1. 最新バージョンのNode.jsをインストールしてください
-2. インストール紹介(https://reactjs.org/docs/installation.html#creating-a-new-application)を見て、新しいプロジェクトを作成してください
+2. [インストール紹介](https://reactjs.org/docs/installation.html#creating-a-new-application)を見て、新しいプロジェクトを作成してください
   ```
   npm install -g create-react-app
   create-react-app my-app
   ```
 
-3. 新しいコンテンツができたら、src/以下の全てのコンテンツを削除してください。(フォルダは削除せず、中身だけです)
+3. 新しいコンテンツができたら、```src/```以下の全てのコンテンツを削除してください。(フォルダは削除せず、中身だけです)
   ```
   cd my-app
   rm -f src/*
   ```
 
-4. index.cssをsrc/以下に作成し、このCSSを貼り付けしてください(https://codepen.io/gaearon/pen/oWWQNa?editors=0100)
-5. index.jsをsrc/以下に作成し、このJsを貼り付けしてください(https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
-6. 以下の3行を、先ほど追加したindex.jsの先頭に貼り付けしてください。
+4. ```index.css```を```src/```以下に作成し、[このCSSを貼り付けしてください](https://codepen.io/gaearon/pen/oWWQNa?editors=0100)
+5. ```index.js```を```src/```以下に作成し、[このJsを貼り付けしてください](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
+6. 以下の3行を、先ほど追加した```index.js```の先頭に貼り付けしてください。
   ```
   import React from 'react';
   import ReactDOM from 'react-dom';
@@ -59,12 +59,12 @@ JavaScriptの最新バージョンであるES6の機能も使用しています�
   ```
 
 プロジェクトフォルダ内で ``` npm start ``` を実行すれば、ブラウザの ``` http://localhost:3000 ``` で空の◯×ゲームが確認できるはずです。
-こちらの指示に従ってあなたのエディタ内のシンタックスハイライトを確認することをオススメします(http://babeljs.io/docs/editors)
+[こちら](http://babeljs.io/docs/editors)の指示に従ってあなたのエディタ内のシンタックスハイライトを確認することをオススメします。
 
 
 
 ### 詰まってしまったら...
-つまづいたら、サポートコミュニティに行ってみましょう。(https://reactjs.org/community/support.html) 特に、Reactiflux chat(https://reactjs.org/community/support.html#reactiflux-chat)は早めに助けを求められるのでめっちゃ良いです。どこに行っても問題が解決しない場合は問題を報告してください。
+つまづいたら、[サポートコミュニティ](https://reactjs.org/community/support.html) 特に、Reactiflux chatに行ってみましょう。は早めに助けを求められるのでめっちゃ良いです。どこに行っても問題が解決しない場合は問題を報告してください。
 
 
 
@@ -95,7 +95,7 @@ class ShoppingList extends React.Component {
 
 ここでいう、ShoppingListは **React component class** または、 **React component type** です。コンポーネントは、**props** と呼ばれるパラメータをとり、 **render method** を介してビューの階層をreturnします。
 
-renderメソッドは、レンダリングしたいものの記述をreturnします。そして、Reactはその記述を取り込み、それを画面にレンダリングします。 特に、render は**React element** を返します。これはレンダリング対象の軽量な記述です。 ほとんどのReact開発者は、JSXという特殊な構文を使用して、これらの構造を簡単に書くことができます。 ``` <div /> ``` 構文は、ビルド時に ``` React.createElement（'div'） ``` に変換されます。 上記の例は、次のものと同等です。
+```render```メソッドは、レンダリングしたいものの記述をreturnします。そして、Reactはその記述を取り込み、それを画面にレンダリングします。 特に、```render``` は**React element** を返します。これはレンダリング対象の軽量な記述です。 ほとんどのReact開発者は、JSXという特殊な構文を使用して、これらの構造を簡単に書くことができます。 ``` <div /> ``` 構文は、ビルド時に ``` React.createElement（'div'） ``` に変換されます。 上記の例は、次のものと同等です。
 ```
 return React.createElement('div', {className: 'shopping-list'},
   React.createElement('h1', /* ... h1 children ... */),
@@ -105,7 +105,7 @@ return React.createElement('div', {className: 'shopping-list'},
 
 興味がある場合、``` createElement() ``` についてはAPIリファレンスで詳しく説明しますが、このチュートリアルでは直接使用しません。 代わりに、JSXを引き続き使用します。
 JSXの中括弧の中に任意のJavaScript式を入れることができます。 各React要素は、変数に格納するか、プログラムを渡すことができる実際のJavaScriptオブジェクトです。
-ShoppingListコンポーネントは組み込みのDOMコンポーネントのみをレンダリングしますが、``` <ShoppingList /> ``` を記述することで、カスタムReactコンポーネントを簡単に簡単に作成できます。 各コンポーネントはカプセル化されているため、独立して動作することができ、単純なコンポーネントから複雑なUIを構築できます。
+```ShoppingList```コンポーネントは組み込みのDOMコンポーネントのみをレンダリングしますが、``` <ShoppingList /> ``` を記述することで、カスタムReactコンポーネントを簡単に簡単に作成できます。 各コンポーネントはカプセル化されているため、独立して動作することができ、単純なコンポーネントから複雑なUIを構築できます。
 
 
 
@@ -114,13 +114,13 @@ ShoppingListコンポーネントは組み込みのDOMコンポーネントの�
 
 今構築しているプロジェクトの雛形が入っています。JavaScriptを気にかけてほしいので、スタイルを提供しています。
 今、わたしたちは3つのコンポーネントを持っています(四角・ボード・ゲーム)
-Squareコンポーネントは単一の<button>をレンダリングし、Boardは9つの四角形をレンダリングし、Gameコンポーネントは後で記入するプレースホルダをボードにレンダリングします。 現時点では、どのコンポーネントもインタラクティブではありません。
+Squareコンポーネントは単一の```<button>```をレンダリングし、```Board```は9つの四角形をレンダリングし、```Game```コンポーネントは後で記入するプレースホルダをボードにレンダリングします。 現時点では、どのコンポーネントもインタラクティブではありません。
 
 
 
 ### Propsを通じてデータを渡す
 新しいことを始めるために、BoardコンポーネントからSquareコンポーネントにいくつかのデータを渡してみましょう。
-ボードのrenderSquareメソッドで、値propをSquareに渡すようにコードを変更します。
+Boardの```renderSquare```メソッドで、```prop```を```Square```に渡すようにコードを変更します。
 ```
 class Board extends React.Component {
   renderSquare(i) {
@@ -128,7 +128,7 @@ class Board extends React.Component {
   }
 ```
 
-Squareのrenderメソッドを変更して、{/ * TODO * /}を{this.props.value}に置き換えてその値を表示します：
+Squareの```render```メソッドを変更して、```{/ * TODO * /}``` を ```{this.props.value}``` に置き換えてその値を表示します：
 ```
 class Square extends React.Component {
   render() {
@@ -215,7 +215,7 @@ class Square extends React.Component {
 
 ``` this.setState ``` が呼び出されると、コンポーネントの更新がスケジュールされ、渡された状態の更新でReactがマージされ、
 子孫とともにコンポーネントが再レンダリングされます。
-コンポーネントが再び降りると、this.state.valueは 'X'になるので、グリッドにXが表示されます。
+コンポーネントが再び降りると、```this.state.value``` は 'X'になるので、グリッドにXが表示されます。
 任意の四角形をクリックすると、その中にXが表示されます。
 
 [現在のコード](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)
@@ -238,7 +238,7 @@ ChromeとFirefoxの拡張機能の"React Devtools"では、ブラウザ内でRea
 
 **複数の子からのデータを集約する場合や、2つの子コンポーネントが相互に通信する場合は、親コンポーネントに存在するようにstateを上に移動します。 親は、親コンポーネントを介して子にstateを戻すことができるので、子コンポーネントは常に互いに、親と同期します。**
 
-Reactコンポーネントをリファクタリングするときには、このようにstateを上に引き寄せているので、この機会に試してみましょう。 Boardにコンストラクタを追加し、9つのSquareに対応する9つのnullを持つ配列を含むように初期状態を設定します。
+Reactコンポーネントをリファクタリングするときには、このようにstateを上に引き寄せているので、この機会に試してみましょう。 Boardにコンストラクタを追加し、9つのSquareに対応する9つの```null```を持つ配列を含むように初期状態を設定します。
 ```
 class Board extends React.Component {
   constructor(props) {
@@ -304,8 +304,8 @@ renderSquare(i) {
 
 [現在のコード](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)
 
-ここで、四角がクリックされた時の動作を変更する必要があります。Boardコンポーネントには、どの四角が塗りつぶされているかが保存されます。つまり、SquareがBoardの状態を更新するための方法が必要です。コンポーネントの状態は、privateとみなされるため、Boardの状態をSquareから直接更新することはできません。
-ここでよくあるパターンは、四角をクリックすると呼び出される関数をBoardからSquareに渡します。BoardのrenderSquareを再度変更し、次のようにします。
+ここで、四角がクリックされた時の動作を変更する必要があります。Boardコンポーネントには、どの四角が塗りつぶされているかが保存されます。つまり、SquareがBoardの状態を更新するための方法が必要です。コンポーネントの状態は、```private```とみなされるため、Boardの状態をSquareから直接更新することはできません。
+ここでよくあるパターンは、四角をクリックすると呼び出される関数をBoardからSquareに渡します。Boardの```renderSquare``` を再度変更し、次のようにします。
 ```
 renderSquare(i) {
   return (
@@ -338,15 +338,15 @@ class Square extends React.Component {
 ```
 
 今、四角がクリックされると、Boardによって渡されたonClick関数が呼び出されます。ここで何が起きるかを要約すると、
-1. 組み込みのDOM```<button>```コンポーネントのonClick propは、Reactにクリックイベントリスナーの設定を指示します。
-2. ボタンがクリックされると、ReactはSquareのrender()メソッドで定義されたonClickイベントハンドラを呼び出します。
-3. このイベントハンドラはthis.props.onClick()を呼び出します。Squareのpropは、Boardによって指定されています。
-4. BoardはSquareに ``` onClick={() => this.handleClick(i)} ``` を渡しているので、呼び出されるとBoard上でthis.handleClick(i)が実行されます。
-5. まだBoard上でhandleClick()メソッドを定義していないので、コードがクラッシュします。
+1. 組み込みのDOM```<button>```コンポーネントの```onClick prop```は、Reactにクリックイベントリスナーの設定を指示します。
+2. ボタンがクリックされると、ReactはSquareの```render()```メソッドで定義されたonClickイベントハンドラを呼び出します。
+3. このイベントハンドラは```this.props.onClick()```を呼び出します。Squareの```prop```は、Boardによって指定されています。
+4. BoardはSquareに ``` onClick={() => this.handleClick(i)} ``` を渡しているので、呼び出されるとBoard上で```this.handleClick(i)```が実行されます。
+5. まだBoard上で```handleClick()```メソッドを定義していないので、コードがクラッシュします。
 
-DOM```<button>``` 要素のonClick属性は、Reactにとって特別な意味を持っていますが、SquareのonClick propまたはBoardのhandleClickメソッドには異なる名前をつけることができます。しかし、Reactアプリケーションでは、属性には ``` on* ```を、ハンドラメソッドには ``` handle* ``` を命名するのが一般的です。
+DOM```<button>``` 要素のonClick属性は、Reactにとって特別な意味を持っていますが、Squareの```onClick prop```またはBoardの```handleClick```メソッドには異なる名前をつけることができます。しかし、Reactアプリケーションでは、属性には ``` on* ```を、ハンドラメソッドには ``` handle* ``` を命名するのが一般的です。
 
-四角をクリックしてみてください。handleClickをまだ定義していないので、エラーが発生します。これをBoardクラスに追加します。
+四角をクリックしてみてください。```handleClick```をまだ定義していないので、エラーが発生します。これをBoardクラスに追加します。
 ```
 class Board extends React.Component {
   constructor(props) {
@@ -445,7 +445,7 @@ Reactでの不変性の最大のメリットは、単純純粋なコンポーネ
 ``` shouldComponentUpdate() ``` の詳細と純粋なコンポーネントを構築する方法については、[パフォーマンスの最適化](https://reactjs.org/docs/optimizing-performance.html#examples)を参照してください。
 
 ### Functional Components
-わたしたちは、コンストラクタを削除しました。実際、Reactはrenderメソッドのみで構成されるSquareのようなコンポーネントタイプのためのfunctional componentsと呼ばれる、より単純な構文をサポートしています。React.Componentを継承するクラスを定義するのではなく、単にpropsをとり、レンダリングすべきものを返す関数を書くだけです。Squareクラス全体をこの関数で置き換えます。
+わたしたちは、コンストラクタを削除しました。実際、Reactは```render```メソッドのみで構成されるSquareのようなコンポーネントタイプのための**functional components**と呼ばれる、より単純な構文をサポートしています。```React.Component```を継承するクラスを定義するのではなく、単にpropsをとり、レンダリングすべきものを返す関数を書くだけです。Squareクラス全体をこの関数で置き換えます。
 ```
 function Square(props) {
   return (
@@ -456,7 +456,7 @@ function Square(props) {
 }
 ```
 
-あなたはthis.propsを変更する必要があります。アプリケーションの多くのコンポーネントは、functional componentとして記述することができます。これらのコンポーネントは書きやすく、Reactは今後さらに最適化します。
+あなたは```this.props```を変更する必要があります。アプリケーションの多くのコンポーネントは、functional componentとして記述することができます。これらのコンポーネントは書きやすく、Reactは今後さらに最適化します。
 
 わたしたちはコードを整理していますが、``` onClick={() => props.onClick()} ``` を ``` onClick={props.onClick} ``` に変更しました。
 ``` onClick={props.onClick()} ``` は、渡す代わりにすぐに ``` props.onClick ``` を呼び出すため、機能しません。
@@ -480,7 +480,7 @@ class Board extends React.Component {
 ・・・
 ```
 
-わたしたちが移動するたび、boolean値を反転して、状態を保存することによってxlsNextをトグルさせます。BoardのhandleClick関数を更新してxlsNextの値を変更させます。
+わたしたちが移動するたび、boolean値を反転して、状態を保存することによって```xlsNext```をトグルさせます。Boardの```handleClick```関数を更新して```xlsNext```の値を変更させます。
 ```
 handleClick(i) {
   const squares = this.state.squares.slice();
@@ -492,7 +492,7 @@ handleClick(i) {
 }
 ```
 
-今度はXとOが交代します。次のBoardのrender内のstatusテキストを変更して、次に誰が表示されるかを表示します。
+今度はXとOが交代します。次のBoardの```render```内の```status```テキストを変更して、次に誰が表示されるかを表示します。
 ```
 render() {
   const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
@@ -586,7 +586,7 @@ function calculateWinner(squares) {
 }
 ```
 
-Boardのrender関数でそれを呼び出すことで、誰が勝利したかをチェックし、どちらかが勝利した時にstatusテキストを「勝者：[X/O]」とすることができます。
+Boardのrender関数でそれを呼び出すことで、誰が勝利したかをチェックし、どちらかが勝利した時に```status```テキストを「勝者：[X/O]」とすることができます。
 Boardのrenderでstatus宣言を次のコードに置き換えます。
 ```
 render() {
@@ -603,7 +603,7 @@ render() {
 ・・・
 ```
 
-BoardのhandleClickを先に戻して、誰かが既にゲームに勝利している場合、または既に四角がいっぱいになっている場合はクリックを無視するように変更します。
+Boardの```handleClick```を先に戻して、誰かが既にゲームに勝利している場合、または既に四角がいっぱいになっている場合はクリックを無視するように変更します。
 ```
 handleClick(i) {
   const squares = this.state.squares.slice();
@@ -683,7 +683,7 @@ Boardを変更して、propsを介して四角をとり、Squareが以前に行�
 
 - Boardでコンストラクタを削除します
 - Boradの ``` renderSquare ``` で ``` this.state.squares[i] ``` を ``` this.props.squares[i] ``` に置き換えます
-- Boardの ``` renderSquare ``` で ``` this.handleClick(i) ``` を ``` を ``` this.props.onClick(i) ``` に置き換えます
+- Boardの ``` renderSquare ``` で ``` this.handleClick(i) ``` を ``` this.props.onClick(i) ``` に置き換えます
 
 Board全体のコンポーネントは次のようになります。
 ```
@@ -799,8 +799,8 @@ render() {
   }
 ```
 
-次に、handleClickメソッドをBoardからGameに移す必要があります。Boardクラスから切り取ってGameクラスに貼り付けることができます。
-ゲームの状態は構造が異なるため、少し変更する必要があります。GameのhandleClickは、新しい履歴項目を連結して、新しい履歴配列をつくることによって、新しい項目をスタックにプッシュすることができます。
+次に、```handleClick```メソッドをBoardからGameに移す必要があります。Boardクラスから切り取ってGameクラスに貼り付けることができます。
+ゲームの状態は構造が異なるため、少し変更する必要があります。Gameの```handleClick```は、新しい履歴項目を連結して、新しい履歴配列をつくることによって、新しい項目をスタックにプッシュすることができます。
 ```
 handleClick(i) {
   const history = this.state.history;
@@ -819,14 +819,14 @@ handleClick(i) {
 }
 ```
 
-この時点で、BoardはrenderSquareとrenderだけを必要としています。状態の初期化とクリックハンドラは両方ともゲームに存在する必要があります。
+この時点で、Boardは```renderSquare```と```render```だけを必要としています。状態の初期化とクリックハンドラは両方ともゲームに存在する必要があります。
 
 [現在のコード](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)
 
 
 
 ### 移動を見る
-これまでのゲームで行われた以前の動きを見てみましょう。先ほどわたしたちは、React要素はファーストクラスのJavaScriptオブジェクトであり、保存したり、渡したりできることを学びました。Reactで複数の項目をレンダリングするには、React要素の配列を渡します。その配列を構築する最も一般的な方法は、データの配列をマップすることです。Gameのrenderメソッドでそれをやってみましょう。
+これまでのゲームで行われた以前の動きを見てみましょう。先ほどわたしたちは、React要素はファーストクラスのJavaScriptオブジェクトであり、保存したり、渡したりできることを学びました。Reactで複数の項目をレンダリングするには、React要素の配列を渡します。その配列を構築する最も一般的な方法は、データの配列をマップすることです。Gameの```render```メソッドでそれをやってみましょう。
 
 ```
 render() {
@@ -902,22 +902,22 @@ render() {
 
 ```
 
-keyはReactによって予約された特別なプロパティです。(refと一緒、より高度な機能です)
-要素が作成されると、Reactはkeyプロパティをプルオフし、keyを返された要素に直接格納します。それはプロパティの一部であるように見えるかもしれませんが、``` this.props.key ``` で参照するこはできません。Reactはkeyを自動的に使用して、更新する子要素を決定します。コンポーネントが独自のkeyについて問い合わせる方法はありません。
+```key```はReactによって予約された特別なプロパティです。(refと一緒、より高度な機能です)
+要素が作成されると、Reactは```key```プロパティをプルオフし、```key```を返された要素に直接格納します。それはプロパティの一部であるように見えるかもしれませんが、``` this.props.key ``` で参照するこはできません。Reactは```key```を自動的に使用して、更新する子要素を決定します。コンポーネントが独自の```key```について問い合わせる方法はありません。
 
-リストが再レンダリングされると、Reactは新しいバージョンの各要素を受け取り、前のリストで一致するkeyを持つ要素を探します。keyがセットに追加されると、コンポーネントが作成されます。keyが削除されると、コンポーネントが破棄されます。keyはReactに各コンポーネントのアイデンティティを伝えるので、rerenders間で状態を維持することができます。コンポーネントのkeyを変更すると、コンポーネントは完全に破棄され、新しい状態で再作成されます。
+リストが再レンダリングされると、Reactは新しいバージョンの各要素を受け取り、前のリストで一致する```key```を持つ要素を探します。```key```がセットに追加されると、コンポーネントが作成されます。```key```が削除されると、コンポーネントが破棄されます。```key```はReactに各コンポーネントのアイデンティティを伝えるので、rerenders間で状態を維持することができます。コンポーネントの```key```を変更すると、コンポーネントは完全に破棄され、新しい状態で再作成されます。
 
 **動的なリストを作成するたびに、適切なkeyを割り当てることを強くおすすめします。**
-適切なkeyを手元においていない場合は、データの再構成を検討してください。
+適切な```key```を手元においていない場合は、データの再構成を検討してください。
 
-keyを指定していない場合、Reactはあなたに警告し、配列のインデックスをkeyとして使用します。リスト内の要素の順序を変更したり、アイテムの追加/削除を行う場合には正しい選択ではありません。明示的に ``` key={i} ``` を渡すと警告が消えますが、同じ問題がありますので、ほとんどの場合は推奨されていません。
+```key```を指定していない場合、Reactはあなたに警告し、配列のインデックスを```key```として使用します。リスト内の要素の順序を変更したり、アイテムの追加/削除を行う場合には正しい選択ではありません。明示的に ``` key={i} ``` を渡すと警告が消えますが、同じ問題がありますので、ほとんどの場合は推奨されていません。
 
-コンポーネントのkeyは、グローバルに一意である必要はなく、直接の兄弟に対して一意である必要があります。
+コンポーネントの```key```は、グローバルに一意である必要はなく、直接の兄弟に対して一意である必要があります。
 
 
 
 ### 時間移動の実装
-移動リストについては、各ステップごとに固有のID(移動が発生した回数)が既にあります。Gameのrenderメソッドでkeyを　``` <li key={move}> ``` として追加し、keyの警告が消えるはずです。
+移動リストについては、各ステップごとに固有のID(移動が発生した回数)が既にあります。Gameの```render```メソッドでkeyを``` <li key={move}> ``` として追加し、keyの警告が消えるはずです。
 ```
 const moves = history.map((step, move) => {
   const desc = move ?
@@ -949,8 +949,8 @@ class Game extends React.Component {
   }
 ```
 
-次に、ゲームでその状態を更新するjumpToメソッドを定義します。また、xlsNextを更新したいです。移動番号のインデックスが偶数の場合は、xlsNextをtrueに設定します。
-GameクラスにjumpToというメソッドを追加します。
+次に、ゲームでその状態を更新する```jumpTo```メソッドを定義します。また、```xlsNext```を更新したいです。移動番号のインデックスが偶数の場合は、```xlsNext```を```true```に設定します。
+Gameクラスに```jumpTo```というメソッドを追加します。
 ```
 handleClick(i) {
   // this method has not changed
@@ -968,7 +968,7 @@ render() {
 }
 ```
 
-その後、新しい移動が行われた時にstepNumberを更新するには、GameのhandleClickの状態更新に ``` stepNumber: history.length ``` を追加します。現在のボード状態を読み込んでいるときにstepNumberを認識するようにhandleClickを更新し、Boardに戻って新しいエントリを作成します。
+その後、新しい移動が行われた時に```stepNumber```を更新するには、Gameの```handleClick```の状態更新に ``` stepNumber: history.length ``` を追加します。現在のボード状態を読み込んでいるときに```stepNumber```を認識するように```handleClick```を更新し、Boardに戻って新しいエントリを作成します。
 ```
 handleClick(i) {
   const history = this.state.history.slice(0, this.state.stepNumber + 1);
