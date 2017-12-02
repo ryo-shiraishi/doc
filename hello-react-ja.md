@@ -1,26 +1,23 @@
 # React 入門
 
-今日はインタラクティブな◯×ゲームを作っていきましょう!
+今回はインタラクティブな◯×ゲームを作っていきましょう!
 
-ここに最終的な結果が載ってます。
+ここに最終的な結果が載っています。
 https://codepen.io/gaearon/pen/gWWZgR?editors=0010
-未知の文法やコードの意味が分からなくても心配しないでください。このチュートリアルをステップ・バイ・ステップ形式で進めていくことによってどうやって構築するかを学んでいけます。
-このゲームをプレイしてみましょう。右側のリストをクリックすれば、その時間に戻ることができ、移動が行われた直後のボードの状態を確認することができます。
-一度ゲームに軽く目を通したらタブを閉じてもらって、次のセクションから、親しみやすい簡単なテンプレートを使って始めていきましょう。
+未知の文法やコードの意味が分からなくても大丈夫。このチュートリアルをステップ・バイ・ステップ形式で進めていくことによってどうやって構築するかを学べます。
+
+このゲームをプレイしてみましょう。右側のリストをクリックすれば、その時間に戻ることができ、移動が行われた直後のボードの状態を確認することができます。一度ゲームに軽く目を通したらタブを閉じてもらって、次のセクションから、親しみやすい簡単なテンプレートを使って始めていきましょう。
 
 ## 前提
 
-あなたがHTMLをJavacriptにある程度なじみがある想定ですが、分からなくてもついてこれるはずです。
-JavaScriptをリフレッシュする必要がある場合は、[当ガイド](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)を読むことをおすすめします。
-JavaScriptの最新バージョンであるES6の機能も使用しています。
-このチュートリアルでは、[アロー関数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)、[クラス](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)、[let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)、および[const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)を使用しています。
-[Babel REPL](https://babeljs.io/repl/#?presets=react&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEAGhgHcQAnBAEwEJsB6AwgbgChRJY_KAEMAlmDh0YWRiGABXVOgB0AczhQAokiVQAQgE8AkowAUPGDADkdECChWeASl4AlOMOBQAIgHkAssp0aIySpogoaFBUQmISdC48QA)を使用して、どのES6コードをコンパイルするかを確認できます。
+あなたがHTMLをJavacriptにある程度なじみがある想定ですが、分からなくてもついてこられるはずです。最新のJavaScriptを確認する必要がある場合は、[当ガイド](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)を読むことをおすすめします。JavaScriptの最新バージョンであるES6の機能も使用しています。このチュートリアルでは、[アロー関数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)、[クラス](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)、[let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)、および[const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)を使用しています。[Babel REPL](https://babeljs.io/repl/#?presets=react&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEAGhgHcQAnBAEwEJsB6AwgbgChRJY_KAEMAlmDh0YWRiGABXVOgB0AczhQAokiVQAQgE8AkowAUPGDADkdECChWeASl4AlOMOBQAIgHkAssp0aIySpogoaFBUQmISdC48QA)を使用して、どのES6コードをコンパイルするかを確認できます。
 
 ## 取り組み方
 
 このチュートリアルには2つの取り組み方があります。
 ・ブラウザの右側にコードを書いていく
 ・ローカル開発環境を構築する
+
 好きな方法を選んでください。
 
 
@@ -93,9 +90,9 @@ class ShoppingList extends React.Component {
 
 一瞬おかしなXMLタグのようなものに見えるでしょう。コンポーネントはあなたが何をレンダリングしたいかを伝えます。(この時、Reactは効率的に更新し、データの変更があったコンポーネントだけをレンダリングします)
 
-ここでいう、ShoppingListは **React component class** または、 **React component type** です。コンポーネントは、**props** と呼ばれるパラメータをとり、 **render method** を介してビューの階層をreturnします。
+ここでいう、ShoppingListは **React component class** または、 **React component type** です。コンポーネントは、**props** と呼ばれるパラメータをとり、 **render** メソッド を介してビューを返します。
 
-```render```メソッドは、レンダリングしたいものの記述をreturnします。そして、Reactはその記述を取り込み、それを画面にレンダリングします。 特に、```render``` は**React element** を返します。これはレンダリング対象の軽量な記述です。 ほとんどのReact開発者は、JSXという特殊な構文を使用して、これらの構造を簡単に書くことができます。 ``` <div /> ``` 構文は、ビルド時に ``` React.createElement（'div'） ``` に変換されます。 上記の例は、次のものと同等です。
+```render```メソッドは、レンダリングしたいものの記述を返します。そして、Reactはその記述を取り込み、それを画面にレンダリングします。 特に、```render``` は**React element** を返します。これはレンダリング対象の軽量な記述です。 ほとんどのReact開発者は、JSXという特殊な構文を使用して、これらの構造を簡単に書くことができます。 ``` <div /> ``` 構文は、ビルド時に ``` React.createElement（'div'） ``` に変換されます。 上記の例は、次のものと同等です。
 ```
 return React.createElement('div', {className: 'shopping-list'},
   React.createElement('h1', /* ... h1 children ... */),
@@ -112,8 +109,8 @@ JSXの中括弧の中に任意のJavaScript式を入れることができます�
 ### はじめよう
 [次の例を見てみましょう](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
 
-今構築しているプロジェクトの雛形が入っています。JavaScriptを気にかけてほしいので、スタイルを提供しています。
-今、わたしたちは3つのコンポーネントを持っています(四角・ボード・ゲーム)
+今構築しているプロジェクトの雛形が入っています。JavaScriptを気にかけてほしいので、今回はスタイルを提供しています。
+今、わたしたちは3つのコンポーネントを持っています。(四角・ボード・ゲーム)
 Squareコンポーネントは単一の```<button>```をレンダリングし、```Board```は9つの四角形をレンダリングし、```Game```コンポーネントは後で記入するプレースホルダをボードにレンダリングします。 現時点では、どのコンポーネントもインタラクティブではありません。
 
 
@@ -128,7 +125,7 @@ class Board extends React.Component {
   }
 ```
 
-Squareの```render```メソッドを変更して、```{/ * TODO * /}``` を ```{this.props.value}``` に置き換えてその値を表示します：
+Squareの```render```メソッドを変更して、```{/ * TODO * /}``` を ```{this.props.value}``` に置き換えてその値を表示します。
 ```
 class Square extends React.Component {
   render() {
@@ -147,7 +144,7 @@ class Square extends React.Component {
 
 ### インタラクティブなComponent
 Squareコンポーネントをクリックすると "X"を記入するようにしましょう。
-Squareの ``` render() ``` 関数で返されたボタンタグを次のように変更してみてください：
+Squareの ``` render() ``` 関数で返された```<button>```タグを次のように変更してみてください：
 
 ```
 class Square extends React.Component {
@@ -161,10 +158,10 @@ class Square extends React.Component {
 }
 ```
 
-今すぐ四角をクリックすると、ブラウザに警告が表示されます。
+さっそく四角をクリックすると、ブラウザにアラートが表示されます。
 これは、新しいJavaScriptのアロー関数の構文を使用します。
-onClickプロップとして関数を渡していることに注意してください。
-``` onClick = {alert（ 'click'）} ``` を実行すると、ボタンがクリックされる代わりにすぐに警告されます。
+onClickプロパティとして関数を渡していることに注意してください。
+``` onClick = {alert（ 'click'）} ``` を実行すると、ボタンがクリックされる代わりにすぐにアラートが表示されます。
 Reactコンポーネントはコンストラクタ内で ``` this.state ``` を設定することで状態を持つことができます。
 状態の正方形の現在の値を保存し、正方形がクリックされたときにそれを変更しましょう。
 まず、コンストラクタをクラスに追加して状態を初期化します。
@@ -189,7 +186,7 @@ class Square extends React.Component {
 
 JavaScriptのクラスにおいて、サブクラスのコンストラクタを定義する時、明示的に ``` super(); ``` 関数を呼ぶ必要があります。
 
-Squareレンダリングメソッドを変更して、現在の状態からの値を表示し、クリック時にそれを切り替える：
+Squareレンダリングメソッドを変更して、現在の状態からの値を表示し、クリック時にそれを切り替えます。
 - ```<button>```タグの中の ``` this.props.value ``` を ``` this.state.value ``` に置き換えます。
 - ``` () => alert() ``` イベントハンドラを ``` () => this.setState({value: 'X'}) ``` に置き換えます。
 
@@ -236,7 +233,7 @@ ChromeとFirefoxの拡張機能の"React Devtools"では、ブラウザ内でRea
 あなたはBoardは各Squareの現在の状態を調べるべきだと考えるかもしれません。これはReactでは技術的に可能ですが、コードを理解しにくく、脆く、リファクタリングするのが難しくなるため、おすすめしません。
 かわりに、ここでのベストは各Squareの代わりにBoardコンポーネントにこの状態を格納することです。Boardコンポーネントは各Squareにどのように表示するかを伝えることができます。
 
-**複数の子からのデータを集約する場合や、2つの子コンポーネントが相互に通信する場合は、親コンポーネントに存在するようにstateを上に移動します。 親は、親コンポーネントを介して子にstateを戻すことができるので、子コンポーネントは常に互いに、親と同期します。**
+**複数の子からのデータを集約する場合や、2つの子コンポーネントが互いに通信する場合は、親コンポーネントに存在するようにstateを上位に移動します。 親は、親コンポーネントを介して子にstateを戻すことができるので、子コンポーネントは常に互いに、親と同期します。**
 
 Reactコンポーネントをリファクタリングするときには、このようにstateを上に引き寄せているので、この機会に試してみましょう。 Boardにコンストラクタを追加し、9つのSquareに対応する9つの```null```を持つ配列を含むように初期状態を設定します。
 ```
@@ -304,7 +301,7 @@ renderSquare(i) {
 
 [現在のコード](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)
 
-ここで、四角がクリックされた時の動作を変更する必要があります。Boardコンポーネントには、どの四角が塗りつぶされているかが保存されます。つまり、SquareがBoardの状態を更新するための方法が必要です。コンポーネントの状態は、```private```とみなされるため、Boardの状態をSquareから直接更新することはできません。
+ここで、四角がクリックされた時の動作を変更する必要があります。Boardコンポーネントには、どの四角が塗りつぶされているかが保存されます。つまり、SquareがBoardの状態を更新する方法が必要です。コンポーネントの状態は、```private```とみなされるため、Boardの状態をSquareから直接更新することはできません。
 ここでよくあるパターンは、四角をクリックすると呼び出される関数をBoardからSquareに渡します。Boardの```renderSquare``` を再度変更し、次のようにします。
 ```
 renderSquare(i) {
@@ -445,7 +442,7 @@ Reactでの不変性の最大のメリットは、単純純粋なコンポーネ
 ``` shouldComponentUpdate() ``` の詳細と純粋なコンポーネントを構築する方法については、[パフォーマンスの最適化](https://reactjs.org/docs/optimizing-performance.html#examples)を参照してください。
 
 ### Functional Components
-わたしたちは、コンストラクタを削除しました。実際、Reactは```render```メソッドのみで構成されるSquareのようなコンポーネントタイプのための**functional components**と呼ばれる、より単純な構文をサポートしています。```React.Component```を継承するクラスを定義するのではなく、単にpropsをとり、レンダリングすべきものを返す関数を書くだけです。Squareクラス全体をこの関数で置き換えます。
+わたしたちは、コンストラクタを削除しました。実際、Reactは```render```メソッドのみで構成されるSquareのようなコンポーネントタイプのための**functional components**と呼ばれる、よりシンプルな構文をサポートしています。```React.Component```を継承するクラスを定義するのではなく、単にpropsをとり、レンダリングすべきものを返す関数を書くだけです。Squareクラス全体をこの関数で置き換えます。
 ```
 function Square(props) {
   return (
@@ -480,7 +477,7 @@ class Board extends React.Component {
 ・・・
 ```
 
-わたしたちが移動するたび、boolean値を反転して、状態を保存することによって```xlsNext```をトグルさせます。Boardの```handleClick```関数を更新して```xlsNext```の値を変更させます。
+わたしたちが移動するたび、boolean値を反転して、状態を保存することによって```xIsNext```をトグルさせます。Boardの```handleClick```関数を更新して```xIsNext```の値を変更させます。
 ```
 handleClick(i) {
   const squares = this.state.squares.slice();
@@ -603,7 +600,7 @@ render() {
 ・・・
 ```
 
-Boardの```handleClick```を先に戻して、誰かが既にゲームに勝利している場合、または既に四角がいっぱいになっている場合はクリックを無視するように変更します。
+誰かが既にゲームに勝利している場合、または既に四角がいっぱいになっている場合は、Boardの```handleClick```を先にreturnして、クリックを無視するように変更します。
 ```
 handleClick(i) {
   const squares = this.state.squares.slice();
@@ -618,7 +615,7 @@ handleClick(i) {
 }
 ```
 
-おめでとう！あなたは今◯×ゲームを動かしています。そして、あなたはReactの基礎を知っています。あなたは恐らくここでは本当の勝者というわけです。
+おめでとう！あなたは今◯×ゲームを動かしています。そして、あなたはReactの基礎を知っています。あなたは恐らくここでは真の勝者というわけです。
 
 [現在のコード](https://codepen.io/gaearon/pen/LyyXgK?editors=0010)
 
@@ -648,7 +645,7 @@ history = [
 ]
 ```
 
-上位のレベルのGameコンポーネントが移動リストの表示を担当するようにします。それで、SquareからBoardに前の状態を引き上げた時のように、BoardからGameに再び引き上げましょう。上位のレベルで必要なすべての情報が得られるようにしましょう。
+上位のレベルのGameコンポーネントが移動リストの表示を担当するようにします。それで、SquareからBoardに状態を引き上げた時のように、BoardからGameに再び引き上げましょう。上位のレベルで必要なすべての情報が得られるようにしましょう。
 
 はじめに、コンストラクタを追加してGameの初期状態を設定します。
 ```
@@ -817,6 +814,7 @@ handleClick(i) {
     xIsNext: !this.state.xIsNext,
   });
 }
+
 ```
 
 この時点で、Boardは```renderSquare```と```render```だけを必要としています。状態の初期化とクリックハンドラは両方ともゲームに存在する必要があります。
