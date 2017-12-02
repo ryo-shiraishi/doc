@@ -1,6 +1,6 @@
 # すずweb課題
 
-##5段階の目標設定
+## 5段階の目標設定
 
 1.各ビジネスに応用できるweb構築のためのツールを使えるようにする(Illustrator, Photoshop, XD, Git, GitHub, ターミナル, Markdown, Atomなど)
 
